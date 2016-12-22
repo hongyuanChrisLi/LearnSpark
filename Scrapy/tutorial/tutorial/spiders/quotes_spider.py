@@ -1,5 +1,5 @@
 import scrapy
-
+# This is for fun
 
 class QuotesSpider(scrapy.Spider):
     name = "quotes"
