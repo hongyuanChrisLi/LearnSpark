@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b07cdcc-acf6-4726-83a0-13827338c7bf" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Scrapy/tutorial/quotes-1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Scrapy/tutorial/quotes-2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Scrapy/tutorial/scrapy.cfg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Scrapy/tutorial/tutorial/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Scrapy/tutorial/tutorial/items.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Scrapy/tutorial/tutorial/middlewares.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Scrapy/tutorial/tutorial/pipelines.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Scrapy/tutorial/tutorial/settings.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Scrapy/tutorial/tutorial/spiders/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Scrapy/tutorial/tutorial/spiders/quotes_spider.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/LearnSpark.iml" afterPath="$PROJECT_DIR$/.idea/LearnSpark.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rdd/learn_rdd.py" afterPath="$PROJECT_DIR$/rdd/learn_rdd.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,8 +24,8 @@
       <file leaf-file-name="learn_rdd.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rdd/learn_rdd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="162">
+              <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -77,8 +67,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="251" />
-    <option name="y" value="76" />
+    <option name="x" value="165" />
+    <option name="y" value="50" />
     <option name="width" value="1018" />
     <option name="height" value="529" />
   </component>
@@ -369,7 +359,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="251" y="76" width="1018" height="529" extended-state="0" />
+    <frame x="165" y="50" width="1018" height="529" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25295275" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -433,8 +423,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rdd/learn_rdd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="162">
+          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
