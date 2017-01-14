@@ -1,6 +1,16 @@
-import common.basic as basic
+import basic
 
-class two_rdd ():
 
-    def __init__ (self):
-        self.lines = basic.create_rdd('GitHubLog.txt')
+def trans(func, mine,  other):
+    print('------ Section ' + func.__name__ + ' ------')
+    mine = func(mine, other)
+    basic.word_count(mine)
+    print('\n')
+
+
+def union(mine, other):
+    return mine.union(other)
+
+
+def intersection(mine, other):
+    return mine.intersection(other)

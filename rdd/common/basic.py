@@ -1,11 +1,9 @@
 import operator
 import re
-from pyspark import SparkConf, SparkContext
 import pref.setting as pref
 
-def create_rdd(filename):
-    conf = SparkConf().setMaster('local').setAppName('Word Count')
-    sc = SparkContext(conf=conf)
+
+def create_rdd(sc, filename):
     data_dir = pref.get_env_variable('SPARK_DATA')
     lines = sc.textFile(data_dir + '/' + filename)
     lines = lines.map(rm_special_chars).map(lambda line: line.lower())
