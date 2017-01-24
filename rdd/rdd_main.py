@@ -16,6 +16,9 @@ lines = basic.create_rdd(sc, 'recipes.dat')
 # two_rdd.trans(two_rdd.union, lines, other)
 # two_rdd.trans(two_rdd.intersection, lines, other)
 
-word_counts = basic.word_count_rdd(lines)
-avg_counts = actions.avg_by_agg(basic.extract_values(word_counts))
-print ("The average count value: " + str(round(avg_counts, 2)))
+# word_counts = basic.word_count_rdd(lines)
+# avg_counts = actions.avg_by_agg(basic.extract_values(word_counts))
+# print ("The average count value: " + str(round(avg_counts, 2)))
+
+values = sc.parallelize([1, 2, 3, 4, 5], 1)
+actions.test_fold(values)

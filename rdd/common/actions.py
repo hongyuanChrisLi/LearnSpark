@@ -12,4 +12,8 @@ def avg_by_agg(nums):
     return val[0] / float(val[1])
 
 
-#def test_reduce()
+def test_fold(values):
+    res1 = values.fold(0, lambda x, y: x + y)
+    res2 = values.fold(1, lambda x, y: x + y)
+    print ("res1 : " + str(res1))
+    print ("res2 : " + str(res2))
