@@ -24,3 +24,15 @@ def word_count (lines):
         cnt += 1
         if cnt > 10:
             break
+    return word_counts
+
+
+def word_count_rdd(lines):
+    words = lines.flatMap(lambda line: line.split())
+    return words \
+        .map(lambda word: (word, 1)) \
+        .reduceByKey(lambda a, b: a + b)
+
+
+def extract_values(rdd):
+    return rdd.map(lambda x: x[1])
