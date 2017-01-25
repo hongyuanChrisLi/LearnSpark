@@ -8,9 +8,11 @@ conf = SparkConf().setMaster('local').setAppName('Word Count')
 sc = SparkContext(conf=conf)
 
 lines01 = basic.create_rdd(sc, 'recipes.dat')
-# lines02 = basic.create_rdd(sc, 'recipes02.dat')
+lines02 = basic.create_rdd(sc, 'recipes02.dat')
 
-pair_rdd.test_pair_rdd(lines01)
+pair_rdd.test_two_pair_rdd(lines01, lines02)
+
+# pair_rdd.test_pair_rdd(lines01)
 
 # Basic Word Count Top 10
 # basic.word_count(lines)

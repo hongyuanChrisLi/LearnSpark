@@ -1,4 +1,4 @@
-import operator
+import two_rdd
 
 
 def test_pair_rdd(lines_rdd):
@@ -14,8 +14,19 @@ def test_pair_rdd(lines_rdd):
     print_pair_rdd("combineByKey", words_reduce4)
 
 
+def test_two_pair_rdd(lines01, lines02):
+    words01 = get_word_pairs_rdd(lines01)
+    words02 = get_word_pairs_rdd(lines02)
+    words12 = two_rdd.subtract_by_key(words01, words02)
+    words_reduce_by_key(words12).foreach(print_elem)
+
+
 def get_words_rdd(lines_rdd):
     return lines_rdd.flatMap(lambda line: line.split())
+
+
+def get_word_pairs_rdd(lines_rdd):
+    return get_words_rdd(lines_rdd).map(lambda x: (x, 1))
 
 
 def words_reduce_by_key(words_rdd):

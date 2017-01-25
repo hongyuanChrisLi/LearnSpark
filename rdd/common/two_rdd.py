@@ -14,3 +14,7 @@ def union(mine, other):
 
 def intersection(mine, other):
     return mine.intersection(other)
+
+
+def subtract_by_key(mine,other):
+    return mine.subtractByKey(other)
