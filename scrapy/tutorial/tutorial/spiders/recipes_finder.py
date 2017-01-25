@@ -16,6 +16,7 @@ class RecipesFinderSpider (scrapy.Spider):
 
         for href in recipe_hrefs:
             yield scrapy.Request (response.urljoin(href), callback=self.parse_recipe)
+        # self.f.close()
 
     def parse_recipe(self, response):
 
@@ -25,4 +26,3 @@ class RecipesFinderSpider (scrapy.Spider):
         for ingred in response.xpath('//span[@class="recipe-ingred_txt added"]/text()').extract():
             self.f.write(ingred + '\n')
         self.f.write('\n')
-        self.f.close()
