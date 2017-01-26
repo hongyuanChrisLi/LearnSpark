@@ -1,4 +1,5 @@
 import scrapy
+import re
 
 class BlogSpider(scrapy.Spider):
     name = "blog"
@@ -9,5 +10,8 @@ class BlogSpider(scrapy.Spider):
 
     def parse(self, response):
         links = response.xpath('//a/@href').extract()
-        print(type(links))
-        print(len(links))
+        regex = re.compile(r'speedy-elephant')
+        selected_links = filter(regex.search, links)
+        # print(type(links))
+        # print(len(links))
+        print (selected_links)
