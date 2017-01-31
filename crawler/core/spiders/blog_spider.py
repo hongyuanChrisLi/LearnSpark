@@ -11,7 +11,7 @@ class BlogSpider(scrapy.Spider):
     def parse(self, response):
         links = response.xpath('//a/@href').extract()
         regex = re.compile(r'speedy-elephant')
-        selected_links = filter(regex.search, links)
-        # print(type(links))
-        # print(len(links))
-        print (selected_links)
+        sel_links = filter(regex.search, links)
+        cln_links = [i.split('#', 1)[0] for i in sel_links]
+        link_set = set(cln_links)
+        print (link_set)
