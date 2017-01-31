@@ -1,10 +1,12 @@
-import scrapy
 import re
+import scrapy
+from scrapy.loader import ItemLoader
+from ..items import LinkCnx
 
 
 class BlogSpider(scrapy.Spider):
     name = "blog"
-    link_dict = {}
+    #link_dict = {}
 
     def start_requests(self):
         url = 'https://speedy-elephant.blogspot.com/'
@@ -14,17 +16,19 @@ class BlogSpider(scrapy.Spider):
         link_set = self.get_link_set(response)
 
         for href in link_set:
-            yield scrapy.Request(url = href, callback=self.build_hash)
+            yield scrapy.Request(url=href, callback=self.parse_each)
 
-    def build_hash(self, response):
-
-        my_link = response.url
+    def parse_each(self, response):
+        l = ItemLoader(item=LinkCnx(), response=response)
+        l.add_value('from_link', response.url)
         links = self.get_link_set(response)
-        link_count = len(links)
+        l.add_value('count', len(links) - 1)
 
         for href in links:
-            if href != my_link:
-                self.link_dict[(href, my_link)] = link_count
+            if href != response.url:
+                l.add_value('to_link', href)
+                # self.link_dict[(href, my_link)] = link_count
+        return l.load_item()
         # print (my_link + " : " + str(len(links)))
         # for k, v in link_dict.items():
         #     print ("From: " + k[0])
@@ -39,5 +43,5 @@ class BlogSpider(scrapy.Spider):
 
         return cln_links
 
-    def get_link_dict(self):
-        return self.link_dict
+    # def get_link_dict(self):
+    #     return self.link_dict
