@@ -1,5 +1,4 @@
 from pyspark import SparkConf, SparkContext
-import os
 import pref.setting as pref
 
 conf = SparkConf().setMaster('local').setAppName('My App')

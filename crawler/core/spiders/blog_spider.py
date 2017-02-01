@@ -6,7 +6,6 @@ from ..items import LinkCnx
 
 class BlogSpider(scrapy.Spider):
     name = "blog"
-    #link_dict = {}
 
     def start_requests(self):
         url = 'https://speedy-elephant.blogspot.com/'
@@ -27,13 +26,7 @@ class BlogSpider(scrapy.Spider):
         for href in links:
             if href != response.url:
                 l.add_value('to_link', href)
-                # self.link_dict[(href, my_link)] = link_count
         return l.load_item()
-        # print (my_link + " : " + str(len(links)))
-        # for k, v in link_dict.items():
-        #     print ("From: " + k[0])
-        #     print ("To: " + k[1])
-        #     print ("Total: " + str(v))
 
     def get_link_set(self, response):
         links = response.xpath('//a/@href').extract()
@@ -42,6 +35,3 @@ class BlogSpider(scrapy.Spider):
         cln_links = [i.split('#', 1)[0] for i in sel_links]
 
         return cln_links
-
-    # def get_link_dict(self):
-    #     return self.link_dict
